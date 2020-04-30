@@ -1,0 +1,30 @@
+<thead>
+    <tr>
+    <th> Product </th>
+    <th> Quantity </th>
+    <th> Description </th>
+    <th> Image </th>
+    <th> Price </th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @order.line_items.each do |item| %> 
+    <tr>
+    <td><%= item.product.name %></td>
+    <td><%= item.quantity %></td>
+    <td><%= item.product.description %></td>
+    <td><%= image_tag item.product.image.thumb %></td>
+    <td><%= humanized_money_with_symbol item.total_price_cents / 100 %></td>
+    </tr>
+<% end %>
+  </tbody>
+  <tfoot>
+        <tr>
+          <th colspan="4">
+            TOTAL:
+          </th >
+          <th>
+          <%= humanized_money_with_symbol @order.total_cents / 100 %>
+          </th>
+        </tr>
+      </tfoot>

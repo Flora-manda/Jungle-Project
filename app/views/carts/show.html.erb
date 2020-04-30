@@ -3,7 +3,10 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-  <% if !@cart.nil? %>
+  <% if enhanced_cart.empty?  %>
+    <h2> Please add items to your cart! </h2>
+    <div><%= link_to "Back to homepage", controller: "products" %></div>
+    <% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -31,11 +34,7 @@
       </tfoot>
     </table>
   </div>
-  <% else %>
-    <h2 class="alert alert-primary" role="alert" > Please add items to your cart! </h2>
-    <% end %>
-
-  <div><%= link_to "Back to homepage", controller: "products" %></div>
+  <% end %>
 
   <div class="row">
     <div class="col-xs-12">
