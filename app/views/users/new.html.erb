@@ -1,0 +1,11 @@
+<h1 class="text-center">Signup!</h1>
+
+<%= form_for :user, url: '/users' do |f| %>
+
+  <div class="text-center"><%= f.text_field :first_name, placeholder: "First name"%></div>
+  <div class="text-center"><%= f.text_field :last_name, placeholder: "Last name"%></div>
+  <div class="text-center"><%= f.text_field :email, placeholder: "Email"%></div>
+  <div class="text-center"><%= f.password_field :password, placeholder: "Password"%></div>
+  <div class="text-center"><%= f.password_field :password_confirmation, placeholder: "Confirm password" %></div>
+  <div class="text-center"><%= f.submit "Submit" %></div>
+<% end %>
