@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  describe 'Validations' do
-    subject { 
+  subject { 
       described_class.new(
         name: "Anything",
         description: "Anything",
@@ -14,7 +13,7 @@ RSpec.describe Product, type: :model do
         category: Category.new)
       }
     
-
+  describe 'Validations' do
     it "is valid with valid attributes" do
       expect(subject).to be_valid
     end
