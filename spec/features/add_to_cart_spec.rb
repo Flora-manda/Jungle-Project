@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Visitor navigates to product detail page", type: :feature, js: true do
+RSpec.feature "Visitor can add to cart", type: :feature, js: true do
 
   # SETUP
   before :each do
@@ -17,7 +17,7 @@ RSpec.feature "Visitor navigates to product detail page", type: :feature, js: tr
     end
   end
 
-  scenario "They see product detail" do
+  scenario "They see cart updated with total number added" do
     # ACT
     visit root_path
 
@@ -27,18 +27,11 @@ RSpec.feature "Visitor navigates to product detail page", type: :feature, js: tr
     #Expect to find product in page
     expect(page).to have_text(product.name)
 
-    #Find specific path in page
-    product_article_elt = page.find(:xpath, '//a/h4', text: product.name)
+    click_button("Add")
 
-    #Click on specific
-    product_article_elt.click
+    expect(page).to have_text("My Cart (1)")
 
-    save_screenshot 'clicked_before_expect.png'
-
-    expect(page).to have_selector 'section.products-show'
-
-    expect(page).to have_text product.name
-
-    save_screenshot 'clicked_after_expect.png'
+    save_screenshot "clicked_after_add_to_cart.png"
+    
   end
 end
