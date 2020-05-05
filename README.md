@@ -36,4 +36,4 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - PostgreSQL 9.x
 - Stripe
 
-## Screenshot of app
+![Screen-recording of app](https://github.com/Flora-manda/Jungle-Project/blob/master/doc/Jungle.mp4)
