@@ -36,4 +36,6 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - PostgreSQL 9.x
 - Stripe
 
-![]
+![](https://github.com/Flora-manda/Jungle-Project/blob/master/doc/Product_homepage.png?raw=true)
+![](https://github.com/Flora-manda/Jungle-Project/blob/master/doc/Product_detail.png?raw=true)
+![](https://github.com/Flora-manda/Jungle-Project/blob/master/doc/Cart.png?raw=true)
